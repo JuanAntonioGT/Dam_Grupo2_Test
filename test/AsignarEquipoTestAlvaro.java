@@ -17,10 +17,13 @@ class AsignarEquipoTestAlvaro {
 	 */
 	@Test
 	void testAsignarEquipoExista() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
 		Equipo equipo = new Equipo();
 		String nombreEquipo= "Los chancletas";
 		
-		equipo.setNombreEquipo(nombreEquipo);
+	
+		asignarEquipo.setEquipo(equipo);
+				
 		assertEquals(nombreEquipo,equipo.getNombreEquipo());
 		
 		
@@ -31,42 +34,100 @@ class AsignarEquipoTestAlvaro {
 	 */
 	@Test
 	void testSetEquipoNoExista() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
 		Equipo equipo = new Equipo();
-		String nombreEquipo="sdfghsdfg";
-		
+		String nombreEquipo="12";
+		asignarEquipo.setEquipo(equipo);
 		equipo.setNombreEquipo(nombreEquipo);
 		assertEquals(null,equipo.getNombreEquipo());
 	}
 
 	/**
-	 * Si existe, pero valor es nulo en nombre, menos de 4 caracteres
+	 * Si existe, pero menos de 4 caracteres
 	 */
 	@Test
-	void testSetEquipoExistaNoValido() {
+	void testSetEquipoExistaNoValidoMenos() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Pac";
-		
+		asignarEquipo.setEquipo(equipo);
 		equipo.setNombreEquipo(nombreEquipo);
 		assertEquals(null,equipo.getNombreEquipo());
 	}
 	
+	/**
+	 * Si existe, y tiene 4 caracteres exactos.
+	 */
+	@Test
+	void testSetEquipoExistaValido() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
+		Equipo equipo = new Equipo();
+		String nombreEquipo="Paco";
+		asignarEquipo.setEquipo(equipo);
+		equipo.setNombreEquipo(nombreEquipo);
+		assertEquals(nombreEquipo,equipo.getNombreEquipo());
+	}
+	
+	/**
+	 * Si existe, y tiene mas de 4 caracteres .
+	 */
+	@Test
+	void testSetEquipoExistaValidoMasDeCuatro() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
+		Equipo equipo = new Equipo();
+		String nombreEquipo="Pacolo";
+		asignarEquipo.setEquipo(equipo);
+		equipo.setNombreEquipo(nombreEquipo);
+		assertEquals(nombreEquipo,equipo.getNombreEquipo());
+	}
+	
+	/**
+	 * Si existe, y tiene maximo 20 caracteres .
+	 */
+	@Test
+	void testSetEquipoExistaValidoVeinte() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
+		Equipo equipo = new Equipo();
+		String nombreEquipo="Pacolpacolpacolpacol";
+		asignarEquipo.setEquipo(equipo);
+		equipo.setNombreEquipo(nombreEquipo);
+		assertEquals(nombreEquipo,equipo.getNombreEquipo());
+	}
+	
+	/**
+	 * Si existe, pero tiene mas de 20 caracteres .
+	 */
+	@Test
+	void testSetEquipoExistaNoValidoMasDeVeinte() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
+		Equipo equipo = new Equipo();
+		String nombreEquipo="Pacolpacolpacolpacol";
+		asignarEquipo.setEquipo(equipo);
+		equipo.setNombreEquipo(nombreEquipo);
+		assertEquals(null,equipo.getNombreEquipo());
+	}
 	/**
 	 * Si existe, pero no tiene ranking
 	 */
 	@Test
 	void testSetEquipoExistaNoRanking() {
 		Equipo equipo = new Equipo();
-		String nombreEquipo="asdgfasdg";
-		
+		String nombreEquipo="paco";
+		int ranking=12;
+		equipo.setRanking(ranking);
 		equipo.setNombreEquipo(nombreEquipo);
-		assertEquals(null,equipo.getNombreEquipo());
+		assertEquals(null,equipo.setRanking(ranking));
+		assertEquals(nombreEquipo,equipo.getNombreEquipo());
 	}
 	
+
+
 	/**
-	 * Si existe, pero nombre est· vacio
+	 * Si existe, pero nombre est√° vacio
 	 */
 	@Test
 	void testSetEquipoExistaVacio() {
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
 		Equipo equipo = new Equipo();
 		String nombreEquipo="";
 		
@@ -81,7 +142,8 @@ class AsignarEquipoTestAlvaro {
 	void testSetEquipoExistaNombrreInvalido() {
 		Equipo equipo = new Equipo();
 		var nombreEquipo="12advbfasdgvas";
-		
+		AsignarEquipo asignarEquipo = new AsignarEquipo();
+		asignarEquipo.setEquipo(equipo);
 		equipo.setNombreEquipo(nombreEquipo);
 		assertEquals(null,equipo.getNombreEquipo());
 	}
@@ -90,6 +152,7 @@ class AsignarEquipoTestAlvaro {
 	 */
 	@Test
 	void testSetEquipoExistaRankingVacio() {
+		
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Los chancletas";
 		
