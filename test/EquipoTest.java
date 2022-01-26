@@ -2,11 +2,6 @@
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
-/**
- * 
- */
-
 /**
  * @author Alberto
  *
@@ -25,14 +20,12 @@ import org.junit.jupiter.api.Test;
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
 	
 	}
-	
-	
-	
+
 	/**
 	 * Set nombre debe comprobarse que no se guarde el nombre por contener caracteres númericos
 	 */
 	@Test	
-	void testSetNombreEquipoInvalidNúmeros() {
+	void testSetNombreEquipoInvalidNumeros() {
 	
 	Equipo equipo = new Equipo ();
 	String nombreEquipo = "123456";
@@ -59,7 +52,7 @@ import org.junit.jupiter.api.Test;
 	 * Set nombre debe comprobarse que se guarde el resultado con el máximo de caracteres establecidos (20)
 	 */
 	@Test	
-	void testSetNombreEquipoValidoIgualAMáximo() {
+	void testSetNombreEquipoValidoIgualAMaximo() {
 	
 	Equipo equipo = new Equipo ();
 	String nombreEquipo = "holaquetalelmaximoes";
@@ -67,10 +60,7 @@ import org.junit.jupiter.api.Test;
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
 	
 	}
-	
-	
 
-	
 	
 	/**
 	 * Set nombre debe comprobarse que no se guarde el resultado por encima del máximo de caracteres establecidos (+ de 20)
@@ -97,10 +87,7 @@ import org.junit.jupiter.api.Test;
 	assertEquals(null, equipo.getNombreEquipo());
 	
 	}
-	
-	
-	
-	
+
 	/**
 	 * Set nombre debe comprobarse que se guarde el resultado con entre el maximo y minimo de caracteres establecidos (20-4)
 	 */
@@ -113,17 +100,6 @@ import org.junit.jupiter.api.Test;
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
 	
 	}
-	
-
-	
-	
-	
-	
-	
-	
-	
-
-
 
 
 	/**
@@ -132,11 +108,9 @@ import org.junit.jupiter.api.Test;
 	@Test
 	void testSetRankingDecimales() {
 		Equipo equipo = new Equipo ();
-		int ranking = 1;
-		equipo.setRanking(ranking);
+		double ranking = 1.01;
+		equipo.setRanking((int) ranking);
 		assertEquals(ranking, equipo.getRanking());
-		
-		
 	}
 	
 	/**
@@ -145,11 +119,9 @@ import org.junit.jupiter.api.Test;
 	@Test
 	void testSetRankingConLetras() {
 		Equipo equipo = new Equipo ();
-		int ranking = 1a;
+		int ranking = 1;
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
-		
-		
 	}
 		
 
@@ -160,11 +132,9 @@ import org.junit.jupiter.api.Test;
 	@Test
 	void testSetRankingMayorQue0() {
 		Equipo equipo = new Equipo ();
-		int ranking = 1;
+		int ranking = 5;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
-
-		
 	}
 	
 	
@@ -177,8 +147,6 @@ import org.junit.jupiter.api.Test;
 		int ranking = -1;
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
-
-		
 	}
 	
 	/**
@@ -190,8 +158,6 @@ import org.junit.jupiter.api.Test;
 		int ranking = 0;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
-
-		
 	}
 	
 	/**
@@ -203,9 +169,8 @@ import org.junit.jupiter.api.Test;
 		int ranking = 10;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
-
-		
 	}
+
 	/**
 	 * Set ranking debe comprobar que el número que se introduzca sea mayor que 10 y no se guarde
 	 */
@@ -215,15 +180,6 @@ import org.junit.jupiter.api.Test;
 		int ranking = 11;
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
-
-		
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

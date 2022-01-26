@@ -28,7 +28,7 @@ class JugadorTest {
     // Test para que tenga menos del mínimo de 4 caracteres
 
     @Test
-    void setTestNombreJugadorCaracterInvalido() {
+    void setTestNombreJugadorCaracterMenorACuatro() {
         Jugador jugador = new Jugador();
         String nombre = "Ana";
         jugador.setNombreJugador(nombre);
@@ -50,7 +50,7 @@ class JugadorTest {
     @Test
     void setTestNombreJugadorMasDelMinimo() {
         Jugador jugador = new Jugador();
-        String nombre = "Peédro"; // La prueba
+        String nombre = "Pedro"; // La prueba
         jugador.setNombreJugador(nombre);
         assertEquals(nombre,jugador.getNombreJugador());
     }
@@ -91,12 +91,11 @@ class JugadorTest {
     void setEdadJugadorCaracteresNoValidos() {
         Jugador jugador = new Jugador();
 
-        NumberFormatException thrown = assertThrows(NumberFormatException.class, () -> {
+        assertThrows(NumberFormatException.class, () -> {
             int edad = Integer.parseInt("Hola");
             jugador.setEdad(edad);
-        }, "La edad debe ser un número");
+        },"Solo puedes guardar números");
 
-        assertNull(thrown.getCause());
     }
 
     // Test para revisar el minimo de edad
@@ -166,14 +165,14 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String aleman = "Aleman";
         String ingles = "Ingles";
-        String español = "Español";
+        String espanol = "Español";
         String frances = "Frances";
 
         jugador.setIdioma(aleman);
         jugador.setIdioma(jugador.getIdioma()+ingles);
-        jugador.setIdioma(jugador.getIdioma()+español);
+        jugador.setIdioma(jugador.getIdioma()+espanol);
         jugador.setIdioma(jugador.getIdioma()+frances);
-        assertEquals(aleman+ingles+español+frances, jugador.getIdioma());
+        assertEquals(aleman+ingles+espanol+frances, jugador.getIdioma());
     }
 
     // Test para revisar que se ha cogido entre 1 y 4 idiomas
@@ -182,12 +181,12 @@ class JugadorTest {
     void setIdiomaJugadorEntreUnoYCuatroIdiomas() {
         Jugador jugador = new Jugador();
         String ingles = "Ingles";
-        String español = "Español";
+        String espanol = "Español";
 
         jugador.setIdioma(ingles);
-        jugador.setIdioma(jugador.getIdioma()+español);
+        jugador.setIdioma(jugador.getIdioma()+espanol);
 
-        assertEquals(ingles+español, jugador.getIdioma());
+        assertEquals(ingles+espanol, jugador.getIdioma());
     }
 
     // Test para revisar que de error dejar el campo vacio

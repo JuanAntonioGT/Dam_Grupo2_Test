@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf92c091-9b9a-4205-a66a-7ed3835b099f" name="Changes" comment="" />
+    <list default="true" id="cf92c091-9b9a-4205-a66a-7ed3835b099f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AsignarEquipoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AsignarEquipoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AsignarEquipoTestAlvaro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/EquipoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/EquipoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/JugadorTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
