@@ -8,7 +8,7 @@ class JugadorTest {
     // Test para comprobar que no venga vacio
 
     @Test
-    void setNombreJugadorValidoCaracteres() {
+    void setNombreJugadorVacio() {
         Jugador jugador = new Jugador();
         String nombre = "";
         jugador.setNombreJugador(nombre);
