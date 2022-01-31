@@ -5,6 +5,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JugadorTest {
 
+    // Test para comprobar que no venga vacio
+
+    @Test
+    void setNombreJugadorValidoCaracteres() {
+        Jugador jugador = new Jugador();
+        String nombre = "";
+        jugador.setNombreJugador(nombre);
+        assertNull(jugador.getNombreJugador());
+    }
+    
     // Test para revisar el tipo de caracteres, deben ser de tipo texto
 
     @Test
@@ -74,7 +84,8 @@ class JugadorTest {
         jugador.setNombreJugador(nombre);
         assertEquals(null,jugador.getNombreJugador());
     }
-
+    
+  
     // Test para revisar el tipo de caracteres, deben ser de tipo entero
 
     @Test
