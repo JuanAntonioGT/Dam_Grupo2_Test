@@ -19,7 +19,7 @@ class EquipoTest {
         String nombreEquipo = "Los chancletas";
         int ranking= 1;
         equipo.setNombreEquipo(nombreEquipo);
-        equipo.setRanking(Integer.parseInt(nombreEquipo));
+        equipo.setRanking(ranking);
         
         assertEquals(ranking,equipo.getRanking());
         assertEquals(nombreEquipo, equipo.getNombreEquipo());
