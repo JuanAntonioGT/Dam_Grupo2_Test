@@ -4,9 +4,154 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 /**
  * @author Alberto
- *
+ * @author Alvaro Martin Bazan *CATEGORIA EQUIPO*
  */
-	class EquipoTest {
+class EquipoTest {
+    /**
+     * Vamos a comprobar que el ranking cumpla menor que 3 
+     * nos devolverá categoria segunda
+     * y que el nombre este relleno
+     */
+    @Test
+    void testSetcategoriaEquipoTodoBien() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking= 1;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(Integer.parseInt(nombreEquipo));
+        
+        assertEquals(ranking,equipo.getRanking());
+        assertEquals(nombreEquipo, equipo.getNombreEquipo());
+
+    }
+    /**
+     * Vamos a comprobar que el nombre esté vacio
+     * 
+     * 
+     */
+    @Test
+    void testSetcategoriaEquipoCamposVaciosNombre() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "";
+        int ranking = 3;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(null,equipo.getCategoriaEquipo());
+  
+
+    }
+    /**
+     * Vamos a comprobar que el Ranking esté vacio
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoCamposVaciosRanking() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 0;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(null,equipo.getCategoriaEquipo());
+
+
+    }
+    /**
+     * Vamos a comprobar que el ranking es menor que 3
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoMenor3() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 2;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(ranking,equipo.getCategoriaEquipo());
+        assertEquals(equipo,equipo.getNombreEquipo());
+
+    }
+
+    /**
+     * Vamos a comprobar que el ranking es mayor o igual que 3
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoMayorOIgual3() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 3;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(ranking,equipo.getCategoriaEquipo());
+        assertEquals(equipo,equipo.getNombreEquipo());
+
+    }
+    /**
+     * Vamos a comprobar que el ranking es menor o igual que 6
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoMenorOIgual6() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 6;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(ranking,equipo.getCategoriaEquipo());
+        assertEquals(equipo,equipo.getNombreEquipo());
+
+    }
+    /**
+     * Vamos a comprobar que el ranking es mayor o igual que 7
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoMayorOIgual7() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 7;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(ranking,equipo.getCategoriaEquipo());
+        assertEquals(equipo,equipo.getNombreEquipo());
+
+    }
+    /**
+     * Vamos a comprobar que el ranking es menor o igual que 10
+     *
+     *
+     */
+    @Test
+    void testSetcategoriaEquipoMenorOIgual10() {
+
+        Equipo equipo = new Equipo ();
+        String nombreEquipo = "Los chancletas";
+        int ranking = 10;
+        equipo.setNombreEquipo(nombreEquipo);
+        equipo.setRanking(ranking);
+
+        assertEquals(ranking,equipo.getCategoriaEquipo());
+        assertEquals(equipo,equipo.getNombreEquipo());
+
+    }
 		
 	/**
 	 * Set nombre debe ser de tipo texto sin otro tipo de caracteres
