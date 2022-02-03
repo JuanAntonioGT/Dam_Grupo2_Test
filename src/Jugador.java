@@ -2,6 +2,9 @@ public class Jugador {
     private String nombre;
     private int edad;
     private String idioma;
+    
+    //story 5
+     private String tipo;
 
     public Jugador (String nombre, int edad, String idioma) {
         this.setNombreJugador(nombre);
@@ -73,5 +76,19 @@ public class Jugador {
     }
     public int getEdad() {
         return edad;
+    }
+    
+    //Story 5
+     public void tipoJugador(String tipo){
+        if(edad >=18 && edad <=25){
+            this.tipo = "Junior";
+            if(edad >=26 && edad <=35) {
+                this.tipo = "Senior";
+                if(edad >36) {
+                    this.tipo = "Master";
+                }
+            }
+
+        }
     }
 }
