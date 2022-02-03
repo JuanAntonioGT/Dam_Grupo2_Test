@@ -1,33 +1,77 @@
-
 public class Jugador {
-	private String nombre;
-	private int edad;
-	private String idioma;
-	
-	public Jugador () {
-			
-		}
-	
-	public void setNombreJugador(String nombre) {
-		//code here
-	}
-	
-	public void setEdad(int edad) {
-		//code here
-	}
-	public void setIdioma(String idioma) {
-		//code here
-	}
-	
+    private String nombre;
+    private int edad;
+    private String idioma;
 
-	public String getIdioma() {
-		return idioma;
-	}
-	
-	public String getNombreJugador() {
-		return nombre;
-	}
-	public int getEdad() {
-		return edad;
-	}
+    public Jugador (String nombre, int edad, String idioma) {
+        this.setNombreJugador(nombre);
+        this.setEdad(edad);
+        this.setIdioma(idioma);
+
+
+    }
+
+    public void setNombreJugador(String nombre) {
+        //Pasamos a mayusculas para facilitar el trabajo
+        String nombreMayus = nombre.toUpperCase();
+
+        //Revisamos que no sea nulo
+        if (nombreMayus != null){
+             //Revisamos el largo del nombre
+             if (nombre.length()>=4 && nombre.length()<=20 ){
+                //Recorremos el nombre por su largo
+                for (int i = 0; i < nombre.length(); i++) {
+                    //En cada vuelta revisamos las letras
+                    char letra = nombreMayus.charAt(i);
+                    //Comprobamos que esten entre A y Z
+                    if (letra >= 65 && letra <= 90 || letra == 32) {
+                        this.nombre=nombre;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    public void setEdad(int edad) {
+
+
+                if (edad != 0){
+                    if (edad >= 18) {
+                        if (edad <= 100) {
+                            this.edad=edad;
+                        }
+                    }
+                }
+            
+
+    }
+    public void setIdioma(String idioma) {
+        String aleman = "aleman";
+        String ingles = "ingles";
+        String espanol = "español";
+        String frances = "frances";
+        String idiomaMin = idioma.toLowerCase();
+
+        if(idiomaMin != null){
+            if(idiomaMin != " "){
+                if(idiomaMin.equals(aleman) || idiomaMin.equals(ingles) || idiomaMin.equals(espanol) || idiomaMin.equals(frances) ){
+                    this.idioma=idioma;
+                }
+            }
+        }
+    }
+
+
+    public String getIdioma() {
+        return idioma;
+    }
+
+    public String getNombreJugador() {
+        return nombre;
+    }
+    public int getEdad() {
+        return edad;
+    }
 }
