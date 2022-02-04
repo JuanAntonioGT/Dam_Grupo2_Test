@@ -7,28 +7,40 @@ public class AsignarEquipo {
       }
       
       public void setEquipo(Equipo equipo) {
-            if (equipo != null) {
-                  if (equipo.getNombreEquipo() != null){
-                        if (equipo.getNombreEquipo().length()>=4 && equipo.getNombreEquipo().length()<=20){
+            // Aqui vamos a guardar el Equipo. Para guardar el equipo setearemos el Nombre de equipo y Ranking.
 
-                              for (int i = 0; i < equipo.getNombreEquipo().length(); i++) {
+            if (equipo != null){
 
-                                    char c = equipo.getNombreEquipo().charAt(i);
-                                    if (!(c >= '0' && c <= '9')) {
-                                          if (equipo.getNombreEquipo() != null) {
-                                                if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))) {
-                                                      if (equipo.getRanking() >= 0 && equipo.getRanking() <= 10) {
-                                                            this.equipo = equipo;
-                                                      }
-                                                }
-                                          }
+                  if (equipo.getNombreEquipo() != null) {
+                        String nombreEquipo  =  equipo.getNombreEquipo();
+                        String[] numbers = {"0","1","2","3","4","5","6","7","8","9"};
+
+                        if (nombreEquipo.length() >= 4 && nombreEquipo.length() <= 20) {
+
+                              for (int i = 0; i < numbers.length; i++) {
+
+                                    if (nombreEquipo.contains(numbers[i])){
+                                          System.out.println("Contiene numero");
+                                          this.equipo.setNombreEquipo(null);
+                                          break;
+
+                                    } else {
+                                          System.out.println("NO contiene numero");
                                     }
+
                               }
+
+                              if (equipo.getRanking() >= 1 && equipo.getRanking() <= 10) {
+                                    System.out.println("Está en el rango");
+                                    this.equipo = equipo;
+                              } else {
+                                    System.out.println("NO está en el rango");
+                                    this.equipo.setRanking(0);
+                              }
+
                         }
                   }
-
             }
-
       }
       
       public void setJugador(Jugador jugador) {
@@ -63,12 +75,14 @@ public class AsignarEquipo {
 
 
       }
+
       public Equipo getEquipo(){
-            if (equipo.getNombreEquipo() != null){
+            if (equipo != null){
                   return this.equipo;
             }
             return null;
       }
+
       public Jugador getJugador(){
 
             return this.jugador;
