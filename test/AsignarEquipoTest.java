@@ -13,7 +13,7 @@ public class AsignarEquipoTest {
 		Jugador jugador = new Jugador();
 		String nombrevalido = "Maria";
 		int edadValida = 32;
-		String idiomaValido = "Espanol";
+		String idiomaValido = "Español";
 
 		jugador.setNombreJugador(nombrevalido);
 		jugador.setEdad(edadValida);
@@ -40,7 +40,7 @@ public class AsignarEquipoTest {
 		Jugador jugador = new Jugador();
 		String nombrevalido = "Artsiom";
 		int edadValida = 28;
-		String idiomaValido = "Espanol";
+		String idiomaValido = "Español";
 
 		jugador.setNombreJugador(nombrevalido);
 		jugador.setEdad(edadValida);
@@ -230,7 +230,7 @@ public class AsignarEquipoTest {
 
 		Equipo equipoGuardado = asignarEquipo.getEquipo();
 
-		assertNull(equipoGuardado);
+		assertNull(equipo);
 	}
 
 	/**
@@ -327,8 +327,9 @@ public class AsignarEquipoTest {
 	@Test
 	void testSetEquipoExistaSinRanking() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
+
 		Equipo equipo = new Equipo();
-		String nombreEquipo="paco";
+		String nombreEquipo="Los Pacos";
 
 		equipo.setNombreEquipo(nombreEquipo);
 
@@ -363,17 +364,17 @@ public class AsignarEquipoTest {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
 
 		Equipo equipoTemporal = new Equipo();
-		String nombreInvalido = "32Marco 4143241";
+		String nombreEquipo = "Los Pirañas69";
 		int ranking = 4;
 
-		equipoTemporal.setNombreEquipo(nombreInvalido); // Esto va nulo
+		equipoTemporal.setNombreEquipo(nombreEquipo); // Esto va nulo
 		equipoTemporal.setRanking(ranking); // OK
 
 		asignarEquipo.setEquipo(equipoTemporal);
 
-		 Equipo equipoGuardado = asignarEquipo.getEquipo();
+		Equipo equipoGuardado = asignarEquipo.getEquipo();
 
-		assertNull(equipoGuardado.getNombreEquipo());
+		assertNull(equipoGuardado);
 		//assertEquals(equipoGuardado.getNombreEquipo());
 		assertEquals(equipoGuardado.getRanking(), equipoGuardado.getRanking());
 
@@ -406,13 +407,14 @@ public class AsignarEquipoTest {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
 		Equipo equipo = new Equipo();
 		var nombreEquipo="Los Madriles";
-		int ranking = -1;
+		int ranking = 15;
 
 		equipo.setNombreEquipo(nombreEquipo);
 		equipo.setRanking(ranking);
 
 		asignarEquipo.setEquipo(equipo);
 
-		assertEquals(null,asignarEquipo.getEquipo());
+		assertEquals(equipo,asignarEquipo.getEquipo());
+		assertNull(asignarEquipo.getEquipo().getRanking());
 	}
 }
