@@ -1,4 +1,3 @@
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,7 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoTodoBien() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking= 1;
         equipo.setNombreEquipo(nombreEquipo);
@@ -33,7 +32,7 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoCamposVaciosNombre() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "";
         int ranking = 3;
         equipo.setNombreEquipo(nombreEquipo);
@@ -51,7 +50,7 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoCamposVaciosRanking() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 0;
         equipo.setNombreEquipo(nombreEquipo);
@@ -69,14 +68,14 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoMenor3() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 2;
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setRanking(ranking);
 
-        assertEquals(ranking,equipo.getCategoriaEquipo());
-        assertEquals(equipo,equipo.getNombreEquipo());
+        assertEquals("Tercera",equipo.getCategoriaEquipo());
+
 
     }
 
@@ -88,14 +87,14 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoMayorOIgual3() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 3;
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setRanking(ranking);
 
-        assertEquals(ranking,equipo.getCategoriaEquipo());
-        assertEquals(equipo,equipo.getNombreEquipo());
+        assertEquals("Segunda",equipo.getCategoriaEquipo());
+
 
     }
     /**
@@ -106,15 +105,12 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoMenorOIgual6() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 6;
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setRanking(ranking);
-
-        assertEquals(ranking,equipo.getCategoriaEquipo());
-        assertEquals(equipo,equipo.getNombreEquipo());
-
+		assertEquals("Segunda", equipo.getCategoriaEquipo());
     }
     /**
      * Vamos a comprobar que el ranking es mayor o igual que 7
@@ -124,14 +120,14 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoMayorOIgual7() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 7;
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setRanking(ranking);
 
-        assertEquals(ranking,equipo.getCategoriaEquipo());
-        assertEquals(equipo,equipo.getNombreEquipo());
+        assertEquals("Primera",equipo.getCategoriaEquipo());
+
 
     }
     /**
@@ -142,14 +138,14 @@ class EquipoTest {
     @Test
     void testSetcategoriaEquipoMenorOIgual10() {
 
-        Equipo equipo = new Equipo ();
+        Equipo equipo = new Equipo();
         String nombreEquipo = "Los chancletas";
         int ranking = 10;
         equipo.setNombreEquipo(nombreEquipo);
         equipo.setRanking(ranking);
 
-        assertEquals(ranking,equipo.getCategoriaEquipo());
-        assertEquals(equipo,equipo.getNombreEquipo());
+        assertEquals("Primera",equipo.getCategoriaEquipo());
+
 
     }
 		
@@ -159,7 +155,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoValido() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombreEquipo = "Equipito";
 	equipo.setNombreEquipo(nombreEquipo);
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
@@ -172,10 +168,10 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoInvalidNumeros() {
 	
-	Equipo equipo = new Equipo ();
-	String nombreEquipo = "123456";
+	Equipo equipo = new Equipo();
+	String nombreEquipo = "1234";
 	equipo.setNombreEquipo(nombreEquipo);
-	assertEquals(null, equipo.getNombreEquipo());
+	assertNull(equipo.getNombreEquipo());
 	
 	}
 	
@@ -186,7 +182,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoValidoIgualAMinimo() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombreEquipo = "Casa";
 	equipo.setNombreEquipo(nombreEquipo);
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
@@ -199,7 +195,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoValidoIgualAMaximo() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombreEquipo = "holaquetalelmaximoes";
 	equipo.setNombreEquipo(nombreEquipo);
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
@@ -213,7 +209,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoInvalidoMayorAlMaximo() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombreEquipo = "equipodefutbolfederaldevoleybolydewaterpolo";
 	equipo.setNombreEquipo(nombreEquipo);
 	assertEquals(null, equipo.getNombreEquipo());
@@ -226,7 +222,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoInferiorAMinimo() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombre = "Siv";
 	equipo.setNombreEquipo(nombre);
 	assertEquals(null, equipo.getNombreEquipo());
@@ -239,7 +235,7 @@ class EquipoTest {
 	@Test	
 	void testSetNombreEquipoValidoMenorAMaximo() {
 	
-	Equipo equipo = new Equipo ();
+	Equipo equipo = new Equipo();
 	String nombreEquipo = "Equipo";
 	equipo.setNombreEquipo(nombreEquipo);
 	assertEquals(nombreEquipo, equipo.getNombreEquipo());
@@ -252,19 +248,19 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingDecimales() {
-		Equipo equipo = new Equipo ();
-		double ranking = 1.01;
+		Equipo equipo = new Equipo();
+		double ranking = 1.0;
 		equipo.setRanking((int) ranking);
 		assertEquals(ranking, equipo.getRanking());
 	}
 	
 	/**
-	 * Set ranking debe comprobar que si el caracter es de tipo no decimal no se guarde
+	 * Set ranking debe comprobar si es un caracter no se guarde
 	 */
 	@Test
 	void testSetRankingConLetras() {
-		Equipo equipo = new Equipo ();
-		int ranking = 1;
+		Equipo equipo = new Equipo();
+		String ranking = "hola";
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
 	}
@@ -276,7 +272,7 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingMayorQue0() {
-		Equipo equipo = new Equipo ();
+		Equipo equipo = new Equipo();
 		int ranking = 5;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
@@ -288,7 +284,7 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingMenorQue0() {
-		Equipo equipo = new Equipo ();
+		Equipo equipo = new Equipo();
 		int ranking = -1;
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
@@ -299,7 +295,7 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingIgualQue0() {
-		Equipo equipo = new Equipo ();
+		Equipo equipo = new Equipo();
 		int ranking = 0;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
@@ -310,7 +306,7 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingIgualQue10() {
-		Equipo equipo = new Equipo ();
+		Equipo equipo = new Equipo();
 		int ranking = 10;
 		equipo.setRanking(ranking);
 		assertEquals(ranking, equipo.getRanking());
@@ -321,7 +317,7 @@ class EquipoTest {
 	 */
 	@Test
 	void testSetRankingMayorQue10() {
-		Equipo equipo = new Equipo ();
+		Equipo equipo = new Equipo();
 		int ranking = 11;
 		equipo.setRanking(ranking);
 		assertEquals(0, equipo.getRanking());
