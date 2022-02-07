@@ -20,21 +20,21 @@ public class AsignarEquipo {
                               for (int i = 0; i < numbers.length; i++) {
 
                                     if (nombreEquipo.contains(numbers[i])){
-                                          System.out.println("Contiene numero");
+                                          //System.out.println("Contiene numero");
                                           this.equipo.setNombreEquipo(null);
                                           break;
 
                                     } else {
-                                          System.out.println("NO contiene numero");
+                                          //System.out.println("NO contiene numero");
                                     }
 
                               }
 
                               if (equipo.getRanking() >= 1 && equipo.getRanking() <= 10) {
-                                    System.out.println("Está en el rango");
+                                    //System.out.println("Está en el rango");
                                     this.equipo = equipo;
                               } else {
-                                    System.out.println("NO está en el rango");
+                                    //System.out.println("NO está en el rango");
                                     this.equipo.setRanking(0);
                               }
 
@@ -84,7 +84,9 @@ public class AsignarEquipo {
       }
 
       public Jugador getJugador(){
-
-            return this.jugador;
+            if (jugador != null){
+                  return this.jugador;
+            }
+            return null;
       }
 }
