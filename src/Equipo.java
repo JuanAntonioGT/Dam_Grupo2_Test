@@ -22,7 +22,7 @@ public class Equipo {
 				}
 
 			}
-			this.nombreEquipo = nombreEquipo;
+			this.nombreEquipo = nombreEquipo.toUpperCase();
 		}
 	}
 
