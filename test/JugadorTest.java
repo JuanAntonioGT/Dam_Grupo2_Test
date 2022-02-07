@@ -15,6 +15,28 @@ class JugadorTest {
         assertNull(jugador.getNombreJugador());
     }
     
+    
+      // Test para revisar que el nombre del jugador que se guarde sea en mayusculas
+
+    @Test
+    void setNombreJugadorEnMayusculas() {
+        Jugador jugador = new Jugador();
+        String nombre = "CARACTERES";
+        jugador.setNombreJugador(nombre);
+        assertEquals(nombre,jugador.getNombreJugador());
+    }
+    
+    
+      // Test para revisar que si el nombre del jugador esta en minusculas no se guarde
+
+    @Test
+    void setNombreJugadorEnMinusculas() {
+        Jugador jugador = new Jugador();
+        String nombre = "caracteres";
+        jugador.setNombreJugador(nombre);
+        assertEquals(null,jugador.getNombreJugador());
+    }
+    
     // Test para revisar el tipo de caracteres, deben ser de tipo texto
 
     @Test
