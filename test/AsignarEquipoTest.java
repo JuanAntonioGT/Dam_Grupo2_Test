@@ -331,11 +331,16 @@ public class AsignarEquipoTest {
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Los Pacos";
 
-		equipo.setNombreEquipo(nombreEquipo);
+		//equipo.setNombreEquipo(nombreEquipo);
 
-		asignarEquipo.setEquipo(equipo);
+		//asignarEquipo.setEquipo(equipo);
 
-		assertEquals(equipo,asignarEquipo.getEquipo());
+		assertThrows(NullPointerException.class, () -> {
+			equipo.setNombreEquipo(nombreEquipo);
+			asignarEquipo.setEquipo(equipo);
+		},"Solo puedes guardar números");
+
+		//assertEquals(equipo,asignarEquipo.getEquipo());
 	}
 
 	/**
@@ -370,13 +375,18 @@ public class AsignarEquipoTest {
 		equipoTemporal.setNombreEquipo(nombreEquipo); // Esto va nulo
 		equipoTemporal.setRanking(ranking); // OK
 
-		asignarEquipo.setEquipo(equipoTemporal);
+		//asignarEquipo.setEquipo(equipoTemporal);
 
-		Equipo equipoGuardado = asignarEquipo.getEquipo();
+		//Equipo equipoGuardado = asignarEquipo.getEquipo();
 
-		assertNull(equipoGuardado);
+
+		assertThrows(NullPointerException.class, () -> {
+			asignarEquipo.setEquipo(equipoTemporal);
+		},"Solo puedes guardar números");
+
+		//assertNull(equipoGuardado);
 		//assertEquals(equipoGuardado.getNombreEquipo());
-		assertEquals(equipoGuardado.getRanking(), equipoGuardado.getRanking());
+		//assertEquals(equipoGuardado.getRanking(), equipoGuardado.getRanking());
 
 	}
 
@@ -412,9 +422,15 @@ public class AsignarEquipoTest {
 		equipo.setNombreEquipo(nombreEquipo);
 		equipo.setRanking(ranking);
 
-		asignarEquipo.setEquipo(equipo);
+		assertThrows(NullPointerException.class, () -> {
+			asignarEquipo.setEquipo(equipo);
+		},"Solo puedes guardar números");
+
+	/*	asignarEquipo.setEquipo(equipo);
 
 		assertEquals(equipo,asignarEquipo.getEquipo());
-		assertNull(asignarEquipo.getEquipo().getRanking());
+		assertNull(asignarEquipo.getEquipo().getRanking());*/
+
+
 	}
 }
