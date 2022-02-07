@@ -42,6 +42,35 @@ class EquipoTest {
   
 
     }
+	/**
+	 * Set nombre debe comprobarse que se guarde el nombre del equipo en mayúsculas
+	 */
+	@Test	
+	void testSetNombreEquipoEnMayusculas() {
+	
+	Equipo equipo = new Equipo();
+	String nombreEquipo = "HOLAEQUIPO";
+	equipo.setNombreEquipo(nombreEquipo);
+	assertEquals(nombreEquipo, equipo.getNombreEquipo());
+	
+	}
+	
+	/**
+	 * Set nombre debe comprobarse que no se guarde el nombre del equipo en minúsculas
+	 */
+	@Test	
+	void testSetNombreEquipoEnMayusculas() {
+	
+	Equipo equipo = new Equipo();
+	String nombreEquipo = "holaequipo";
+	equipo.setNombreEquipo(nombreEquipo);
+	assertEquals(null, equipo.getNombreEquipo());
+	
+	}
+
+
+	
+	
     /**
      * Vamos a comprobar que el Ranking esté vacio
      *
