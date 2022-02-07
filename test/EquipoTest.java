@@ -59,7 +59,7 @@ class EquipoTest {
 	 * Set nombre debe comprobarse que no se guarde el nombre del equipo en minúsculas
 	 */
 	@Test	
-	void testSetNombreEquipoEnMayusculas() {
+	void testSetNombreEquipoEnMinúsculas() {
 	
 	Equipo equipo = new Equipo();
 	String nombreEquipo = "holaequipo";
