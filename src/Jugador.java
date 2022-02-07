@@ -28,7 +28,7 @@ public class Jugador {
                     char letra = nombreMayus.charAt(i);
                     //Comprobamos que esten entre A y Z
                     if (letra >= 65 && letra <= 90 || letra == 32) {
-                        this.nombre=nombre;
+                        this.nombre=nombre.toUpperCase();
                     }
                 }
             }
