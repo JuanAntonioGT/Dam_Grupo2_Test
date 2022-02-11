@@ -1,11 +1,12 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import java.util.Locale;
-
 public class AsignarEquipoTest {
 
-	// Quiero comprobar que asignar un equipo con todos los campos de jugador sean correctos y se guarden.
+
+	/**
+	 * Quiero comprobar la asignación de un equipo, con todos los campos de jugador, son correctos y se guarden.
+ 	 */
 	@Test
 	void testSetJugadorTodoCorrecto() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
@@ -34,33 +35,6 @@ public class AsignarEquipoTest {
 	}
 
 	/**
-	 * Se prueba Set nombre, para ver que no existe en BDD
-	 */
-	@Test
-	void testSetNombreJugadorPruebaNoExistenciaBDD() {
-		AsignarEquipo asignarEquipo = new AsignarEquipo();
-
-		Jugador jugador = new Jugador();
-		String nombrevalido = "Artsiom";
-		int edadValida = 28;
-		String idiomaValido = "Ingles";
-
-		jugador.setNombreJugador(nombrevalido);
-		jugador.setEdad(edadValida);
-		jugador.setIdioma(idiomaValido);
-
-		asignarEquipo.setJugador(jugador);
-
-		Jugador jugadorGuardado = asignarEquipo.getJugador();
-
-		nombrevalido = nombrevalido.toUpperCase();
-		assertEquals(jugador,jugadorGuardado);
-		assertEquals(jugador.getNombreJugador(),jugadorGuardado.getNombreJugador());
-		assertEquals(jugador.getEdad(),jugadorGuardado.getEdad());
-		assertEquals(jugador.getIdioma(),jugadorGuardado.getIdioma());
-	}
-
-	/**
 	 * Se prueba Set nombre, para ver que el nombre esta mal puesto
 	 */
 	@Test
@@ -76,10 +50,11 @@ public class AsignarEquipoTest {
 		jugador.setEdad(edadValida);
 		jugador.setIdioma(idiomaValido);
 
-		assertThrows(NullPointerException.class, () -> {
-			asignarEquipo.setJugador(jugador);
-		},"Solo puedes guardar letras en el nombre");
+		asignarEquipo.setJugador(jugador);
 
+		Jugador jugadorGuardado = asignarEquipo.getJugador();
+
+		assertNull(jugadorGuardado);
 	}
 
 	/**
@@ -98,14 +73,15 @@ public class AsignarEquipoTest {
 		jugador.setEdad(edadValida);
 		jugador.setIdioma(idiomaValido);
 
-		assertThrows(NullPointerException.class, () -> {
-			asignarEquipo.setJugador(jugador);
-		},"Solo puedes guardar letras en el nombre");
+		asignarEquipo.setJugador(jugador);
 
+		Jugador jugadorGuardado = asignarEquipo.getJugador();
+
+		assertNull(jugadorGuardado);
 	}
 
 	/**
-	 * Se prueba Set nombre, para ver edad no valida
+	 * Se prueba Set edad para ver que la edad no es valida
 	 */
 	@Test
 	void testSetNombreJugadorPruebaEdadNoValida() {
@@ -120,9 +96,9 @@ public class AsignarEquipoTest {
 		jugador.setEdad(edadValida);
 		jugador.setIdioma(idiomaValido);
 
-		assertEquals(nombrevalido.toUpperCase(), jugador.getNombreJugador());
-		assertEquals(0,jugador.getEdad());
+		Jugador jugadorGuardado = asignarEquipo.getJugador();
 
+		assertNull(jugadorGuardado);
 	}
 
 	/**
@@ -134,24 +110,19 @@ public class AsignarEquipoTest {
 
 		Jugador jugador = new Jugador();
 		String nombrevalido = "Artsiom";
+		int edadValida = 0;
 		String idiomaValido = "Aleman";
 
 		jugador.setNombreJugador(nombrevalido);
-		assertThrows(NullPointerException.class, () -> {
-			int edadValida = (Integer) null;
-			jugador.setEdad(edadValida);
-		},"Solo puedes guardar números");
-
+		jugador.setEdad(edadValida);
 		jugador.setIdioma(idiomaValido);
+		nombrevalido = nombrevalido.toUpperCase();
 
 		asignarEquipo.setJugador(jugador);
 
 		Jugador jugadorGuardado = asignarEquipo.getJugador();
 
 		assertNull(jugadorGuardado);
-		//	assertEquals(nombrevalido, jugadorGuardado.getNombreJugador());
-		//	assertNull(jugadorGuardado.getEdad());
-		//	assertEquals(idiomaValido, jugadorGuardado.getIdioma());
 	}
 
 	/**
@@ -177,9 +148,6 @@ public class AsignarEquipoTest {
 		Jugador jugadorGuardado = asignarEquipo.getJugador();
 
 		assertNull(jugadorGuardado);
-		//	assertEquals(nombrevalido, jugadorGuardado.getNombreJugador());
-		//	assertEquals(edadValida, jugadorGuardado.getEdad());
-		//	assertEquals(null, jugadorGuardado.getIdioma());
 	}
 
 	/**
@@ -203,9 +171,6 @@ public class AsignarEquipoTest {
 		Jugador jugadorGuardado = asignarEquipo.getJugador();
 
 		assertNull(jugadorGuardado);
-		//	assertNull(jugadorGuardado.getNombreJugador());
-		//	assertNull(jugadorGuardado.getEdad());
-		//	assertNull(jugadorGuardado.getIdioma());
 	}
 
 
@@ -221,7 +186,7 @@ public class AsignarEquipoTest {
 
 		Equipo equipoGuardado = asignarEquipo.getEquipo();
 
-		assertNull(equipo);
+		assertNull(equipoGuardado);
 	}
 
 	/**
@@ -283,9 +248,11 @@ public class AsignarEquipoTest {
 	@Test
 	void testSetEquipoExistaValidoMasDeCuatro() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
+
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Antonio";
 		int ranking = 3;
+
 		equipo.setNombreEquipo(nombreEquipo);
 		equipo.setRanking(ranking);
 
@@ -309,7 +276,10 @@ public class AsignarEquipoTest {
 
 		asignarEquipo.setEquipo(equipo);
 
-		assertEquals(null,asignarEquipo.getEquipo());
+
+		Equipo equipoGuardado = asignarEquipo.getEquipo();
+
+		assertNull(equipoGuardado);
 	}
 
 	/**
@@ -322,16 +292,13 @@ public class AsignarEquipoTest {
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Los Pacos";
 
-		//equipo.setNombreEquipo(nombreEquipo);
+		equipo.setNombreEquipo(nombreEquipo);
 
-		//asignarEquipo.setEquipo(equipo);
+		asignarEquipo.setEquipo(equipo);
 
-		assertThrows(NullPointerException.class, () -> {
-			equipo.setNombreEquipo(nombreEquipo);
-			asignarEquipo.setEquipo(equipo);
-		},"Solo puedes guardar números");
+		Equipo equipoTemporal = asignarEquipo.getEquipo();
 
-		//assertEquals(equipo,asignarEquipo.getEquipo());
+		assertNull(equipoTemporal);
 	}
 
 	/**
@@ -349,7 +316,9 @@ public class AsignarEquipoTest {
 
 		asignarEquipo.setEquipo(equipo);
 
-		assertEquals(null,asignarEquipo.getEquipo());
+		Equipo equipoTemporal = asignarEquipo.getEquipo();
+
+		assertNull(equipoTemporal);
 	}
 
 	/**
@@ -363,21 +332,14 @@ public class AsignarEquipoTest {
 		String nombreEquipo = "Los Pirañas69";
 		int ranking = 4;
 
-		equipoTemporal.setNombreEquipo(nombreEquipo); // Esto va nulo
-		equipoTemporal.setRanking(ranking); // OK
+		equipoTemporal.setNombreEquipo(nombreEquipo);
+		equipoTemporal.setRanking(ranking);
 
-		//asignarEquipo.setEquipo(equipoTemporal);
+		asignarEquipo.setEquipo(equipoTemporal);
 
-		//Equipo equipoGuardado = asignarEquipo.getEquipo();
+		Equipo equipoGuardado = asignarEquipo.getEquipo();
 
-
-		assertThrows(NullPointerException.class, () -> {
-			asignarEquipo.setEquipo(equipoTemporal);
-		},"Solo puedes guardar números");
-
-		//assertNull(equipoGuardado);
-		//assertEquals(equipoGuardado.getNombreEquipo());
-		//assertEquals(equipoGuardado.getRanking(), equipoGuardado.getRanking());
+		assertNull(equipoGuardado);
 
 	}
 
@@ -391,13 +353,14 @@ public class AsignarEquipoTest {
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Los chancletas";
 
-		assertThrows(NullPointerException.class, () -> {
-			int ranking = (Integer) null;
-			equipo.setRanking(ranking);
-		},"Solo puedes guardar números");
+		equipo.setNombreEquipo(nombreEquipo);
 
+		asignarEquipo.setEquipo(equipo);
 
-		assertEquals(null,asignarEquipo.getEquipo());
+		Equipo equipoGuardado = asignarEquipo.getEquipo();
+
+		assertNull(equipoGuardado);
+
 	}
 
 	/**
@@ -406,6 +369,7 @@ public class AsignarEquipoTest {
 	@Test
 	void testSetEquipoExistaRankingInvalido() {
 		AsignarEquipo asignarEquipo = new AsignarEquipo();
+
 		Equipo equipo = new Equipo();
 		String nombreEquipo="Los Madriles";
 		int ranking = 15;
@@ -413,10 +377,10 @@ public class AsignarEquipoTest {
 		equipo.setNombreEquipo(nombreEquipo);
 		equipo.setRanking(ranking);
 
-		assertThrows(NullPointerException.class, () -> {
-			asignarEquipo.setEquipo(equipo);
-			asignarEquipo.getEquipo().getRanking();
-		},"Solo puedes guardar números");
+		asignarEquipo.setEquipo(equipo);
 
+		Equipo equipoGuardado = asignarEquipo.getEquipo();
+
+		assertNull(equipoGuardado);
 	}
 }
