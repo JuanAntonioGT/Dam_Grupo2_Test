@@ -4,11 +4,15 @@ public class AsignarEquipo {
 
       //Nos devuelve un true si es distinto a nulo.
       private Boolean isValidated(Object comprobar) {
+            boolean validated = true;
 
-            if (comprobar != null) {
-                  return true;
+            if (comprobar == null) {
+                  validated = false;
+            } else {
+                  validated = true;
             }
-            return false;
+
+            return validated;
       }
 
       public void setEquipo(Equipo equipo) {
@@ -56,8 +60,8 @@ public class AsignarEquipo {
       public void setJugador(Jugador jugador) {
             //Comprobamos si viene null
             if (isValidated(jugador)) {
-                  if (!jugador.getNombreJugador().isEmpty()){
-                        if (!jugador.getIdioma().isEmpty()){
+                  if (isValidated(jugador.getNombreJugador())){
+                        if (isValidated(jugador.getIdioma())){
                               if (jugador.getEdad() != 0){
                                     this.jugador = jugador;
                               }
