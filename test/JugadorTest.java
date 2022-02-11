@@ -1,9 +1,9 @@
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class JugadorTest {
+
+    /*--------NOMBRE------*/
 
     // Test para comprobar que no venga vacio
 
@@ -14,9 +14,9 @@ class JugadorTest {
         jugador.setNombreJugador(nombre);
         assertNull(jugador.getNombreJugador());
     }
-    
-    
-      // Test para revisar que el nombre del jugador que se guarde sea en mayusculas
+
+
+    // Test para revisar que el nombre del jugador que se guarde sea en mayusculas
 
     @Test
     void setNombreJugadorEnMayusculas() {
@@ -25,18 +25,20 @@ class JugadorTest {
         jugador.setNombreJugador(nombre);
         assertEquals(nombre,jugador.getNombreJugador());
     }
-    
-    
-      // Test para revisar que si el nombre del jugador esta en minusculas no se guarde
+
+
+    // Test para revisar que si el nombre del jugador esta en minusculas SE GUARDA
 
     @Test
     void setNombreJugadorEnMinusculas() {
         Jugador jugador = new Jugador();
         String nombre = "caracteres";
         jugador.setNombreJugador(nombre);
-        assertEquals(null,jugador.getNombreJugador());
+
+        nombre = nombre.toUpperCase();
+        assertEquals(nombre,jugador.getNombreJugador());
     }
-    
+
     // Test para revisar el tipo de caracteres, deben ser de tipo texto
 
     @Test
@@ -44,6 +46,8 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String nombre = "Caracteres";
         jugador.setNombreJugador(nombre);
+
+        nombre = nombre.toUpperCase();
         assertEquals(nombre,jugador.getNombreJugador());
     }
 
@@ -73,7 +77,10 @@ class JugadorTest {
     void setTestNombreJugadorIgualAlMinimo() {
         Jugador jugador = new Jugador();
         String nombre = "Juan";
+
         jugador.setNombreJugador(nombre);
+
+        nombre = nombre.toUpperCase();
         assertEquals(nombre,jugador.getNombreJugador());
     }
 
@@ -84,6 +91,8 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String nombre = "Pedro"; // La prueba
         jugador.setNombreJugador(nombre);
+
+        nombre = nombre.toUpperCase();
         assertEquals(nombre,jugador.getNombreJugador());
     }
 
@@ -92,8 +101,10 @@ class JugadorTest {
     @Test
     void setTestNombreJugadorMenosDelMaximo() {
         Jugador jugador = new Jugador();
-        String nombre = "qwertyuiopasdfghjklñ"; // La prueba
+        String nombre = "qwertyuiopasdfghjkln"; // La prueba
         jugador.setNombreJugador(nombre);
+
+        nombre = nombre.toUpperCase();
         assertEquals(nombre,jugador.getNombreJugador());
     }
 
@@ -104,10 +115,12 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String nombre = "qwertyuiopasdfghjklñr"; // La prueba
         jugador.setNombreJugador(nombre);
-        assertEquals(null,jugador.getNombreJugador());
+
+        assertNull(jugador.getNombreJugador());
     }
-    
-  
+
+    /*--------EDAD-------*/
+
     // Test para revisar el tipo de caracteres, deben ser de tipo entero
 
     @Test
@@ -115,6 +128,7 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         int edad = 50;
         jugador.setEdad(edad);
+
         assertEquals(edad,jugador.getEdad());
     }
 
@@ -181,6 +195,9 @@ class JugadorTest {
         assertEquals(0,jugador.getEdad());
     }
 
+
+    /*-------IDIOMA------*/
+
     // Test para revisar el idioma de un jugador correctamente
 
     @Test
@@ -198,7 +215,7 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String aleman = "Aleman";
         String ingles = "Ingles";
-        String espanol = "Español";
+        String espanol = "Espanol";
         String frances = "Frances";
 
         jugador.setIdioma(aleman);
@@ -214,7 +231,7 @@ class JugadorTest {
     void setIdiomaJugadorEntreUnoYCuatroIdiomas() {
         Jugador jugador = new Jugador();
         String ingles = "Ingles";
-        String espanol = "Español";
+        String espanol = "Espanol";
 
         jugador.setIdioma(ingles);
         jugador.setIdioma(jugador.getIdioma()+espanol);
@@ -243,4 +260,119 @@ class JugadorTest {
         assertNull(jugador.getIdioma());
     }
 
+    /*--------TIPO-------*/
+
+    // Test para revisar que si sale del rango de tipo, da null
+
+    @Test
+    void testTipoJugadorNull() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 17;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertNull(null,jugador.getTipoJugador());
+    }
+
+    // Test para revisar minimo del rango de tipo Junior
+
+    @Test
+    void testTipoJugadorMenorRangoJunior() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 18;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertEquals("Junior", jugador.getTipoJugador());
+    }
+
+    // Test para revisar maximo del rango de tipo Junior
+
+    @Test
+    void testTipoJugadorMaximoRangoJunior() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        int edad = 25;
+        String idioma = "Español";
+
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setEdad(edad);
+        jugador.setIdioma(idioma);
+
+
+        assertEquals("Junior", jugador.getTipoJugador());
+    }
+
+    // Test para revisar minimo del rango de tipo Senior
+
+    @Test
+    void testTipoJugadorMenorRangoSenior() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 26;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertEquals("Senior", jugador.getTipoJugador());
+    }
+
+    // Test para revisar maximo del rango de tipo Senior
+
+    @Test
+    void testTipoJugadorMayorRangoSenior() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 35;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertEquals("Senior", jugador.getTipoJugador());
+    }
+
+    // Test para revisar minimo del rango de tipo Master
+
+    @Test
+    void testTipoJugadorMenorRangoMaster() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 36;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertEquals("Master", jugador.getTipoJugador());
+    }
+
+    // Test para revisar medio del rango de tipo Master
+
+    @Test
+    void testTipoJugadorRangoMayoDeMaster() {
+        Jugador jugador = new Jugador();
+        String nombreJugador = "Antonio";
+        String idioma = "Español";
+        int edad = 50;
+
+        jugador.setNombreJugador(nombreJugador);
+        jugador.setIdioma(idioma);
+        jugador.setEdad(edad);
+
+        assertEquals("Master", jugador.getTipoJugador());
+    }
 }
