@@ -1,92 +1,73 @@
-
 public class AsignarEquipo {
       private Equipo equipo;
       private Jugador jugador;
 
-      public AsignarEquipo() {
+      //Nos devuelve un true si es distinto a nulo.
+      private Boolean isValidated(Object comprobar) {
+
+            if (comprobar != null) {
+                  return true;
+            }
+            return false;
       }
-      
+
       public void setEquipo(Equipo equipo) {
-            // Aqui vamos a guardar el Equipo. Para guardar el equipo setearemos el Nombre de equipo y Ranking.
-
-            if (equipo != null){
-
-                  if (equipo.getNombreEquipo() != null) {
-                        String nombreEquipo  =  equipo.getNombreEquipo();
-                        String[] numbers = {"0","1","2","3","4","5","6","7","8","9"};
-
-                        if (nombreEquipo.length() >= 4 && nombreEquipo.length() <= 20) {
-
-                              for (int i = 0; i < numbers.length; i++) {
-
-                                    if (nombreEquipo.contains(numbers[i])){
-                                          //System.out.println("Contiene numero");
-                                          this.equipo.setNombreEquipo(null);
-                                          break;
-
-                                    } else {
-                                          //System.out.println("NO contiene numero");
-                                    }
-
-                              }
-
-                              if (equipo.getRanking() >= 1 && equipo.getRanking() <= 10) {
-                                    //System.out.println("Está en el rango");
-                                    this.equipo = equipo;
-                              } else {
-                                    //System.out.println("NO está en el rango");
-                                    this.equipo.setRanking(0);
-                              }
-
+            if (isValidated(equipo)){
+                  if (hasName(equipo.getNombreEquipo())){
+                        if (hasRanking(equipo.getRanking())){
+                              this.equipo = equipo;
                         }
                   }
             }
       }
-      
-      public void setJugador(Jugador jugador) {
-            if (jugador != null) {
 
-                  if (jugador.getNombreJugador() != null){
-                        if (jugador.getNombreJugador().length() >= 4 && jugador.getNombreJugador().length() <= 20) {
-                              for (int i = 0; i < jugador.getNombreJugador().length(); i++) {
-                                    char c = jugador.getNombreJugador().charAt(i);
-                                    if (!(c >= '0' && c <= '9')){
-                                          if (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == ' ')) {
-                                                try {
-                                                      if (jugador.getEdad() != 0 && jugador.getEdad() >= 18 && jugador.getEdad() <= 100) {
+      private boolean hasRanking(int rank){
+            boolean hasRanking = true;
 
-                                                            if (jugador.getIdioma() != null){
-                                                                  if (jugador.getIdioma().contains("Espanol") || jugador.getIdioma().contains("Ingles") || jugador.getIdioma().contains("Aleman") || jugador.getIdioma().contains("Frances") || jugador.getIdioma().contains("Español") ) {
-                                                                        this.jugador = jugador;
-                                                                  }
-                                                            }
-                                                      }
-                                                } catch (NumberFormatException e) {
-                                                      System.out.println(e.getCause() + e.getMessage());
-                                                }
-                                          }
-                                    }
-
-                              }
-                        }
-
-                  }
+            if (rank != 0){
+                  hasRanking = true;
+            } else {
+                  hasRanking = false;
             }
 
-
+            return hasRanking;
       }
+
+      private boolean hasName(String name){
+            boolean hasName = true;
+
+            if (name != null){
+                  if (name.length()>0){
+                        hasName = true;
+                  } else {
+                        hasName = false;
+                  }
+            } else {
+                  hasName = false;
+            }
+            return hasName;
+      }
+
 
       public Equipo getEquipo(){
-            if (equipo != null){
-                  return this.equipo;
-            }
-            return null;
+            return this.equipo;
       }
 
-      public Jugador getJugador(){
-            if (jugador != null){
-                  return this.jugador;
+      public void setJugador(Jugador jugador) {
+            //Comprobamos si viene null
+            if (isValidated(jugador)) {
+                  if (!jugador.getNombreJugador().isEmpty()){
+                        if (!jugador.getIdioma().isEmpty()){
+                              if (jugador.getEdad() != 0){
+                                    this.jugador = jugador;
+                              }
+                        }
+                  }
             }
-            return null;
       }
+
+      public Jugador getJugador() {
+            return this.jugador;
+      }
+
 }
