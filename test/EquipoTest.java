@@ -52,7 +52,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Vamos a comprobar que el nombre est� vacio
+	 * Vamos a comprobar que el nombre estÃ© vacio
 	 */
 	@Test
 	void testSetCategoriaEquipoCamposVaciosNombre() {
@@ -69,7 +69,7 @@ class EquipoTest {
 
 
 	/**
-	 * Vamos a comprobar que el Ranking est� vacio
+	 * Vamos a comprobar que el Ranking estÃ© vacio
 	 *
 	 *
 	 */
@@ -176,7 +176,7 @@ class EquipoTest {
 	//SET NOMBRES
 
 	/**
-	 * Set nombre debe comprobarse que se guarde el nombre del equipo en may�sculas
+	 * Set nombre debe comprobarse que se guarde el nombre del equipo en mayÃºsculas
 	 */
 
 	@Test
@@ -216,7 +216,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Set nombre debe comprobarse que no se guarde el nombre por contener caracteres n�mericos
+	 * Set nombre debe comprobarse que no se guarde el nombre por contener caracteres nÃºmericos
 	 */
 	@Test
 	void testSetNombreEquipoInvalidNumeros() {
@@ -230,7 +230,7 @@ class EquipoTest {
 
 
 	/**
-	 * Set nombre debe comprobarse que se guarde el resultado con el m�nimo de caracteres establecidos (4)
+	 * Set nombre debe comprobarse que se guarde el resultado con el mÃ­nimo de caracteres establecidos (4)
 	 */
 	@Test
 	void testSetNombreEquipoValidoIgualAMinimo() {
@@ -243,7 +243,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Set nombre debe comprobarse que se guarde el resultado con el m�ximo de caracteres establecidos (20)
+	 * Set nombre debe comprobarse que se guarde el resultado con el mÃ¡ximo de caracteres establecidos (20)
 	 */
 	@Test
 	void testSetNombreEquipoValidoIgualAMaximo() {
@@ -257,7 +257,7 @@ class EquipoTest {
 
 
 	/**
-	 * Set nombre debe comprobarse que no se guarde el resultado por encima del m�ximo de caracteres establecidos (+ de 20)
+	 * Set nombre debe comprobarse que no se guarde el resultado por encima del mÃ¡ximo de caracteres establecidos (+ de 20)
 	 */
 	@Test
 	void testSetNombreEquipoInvalidoMayorAlMaximo() {
@@ -312,7 +312,7 @@ class EquipoTest {
 
 
 	/**
-	 * Set ranking debe comprobar que el n�mero que se introduzca sea mayor que -1 y menor a 11 y se guarde
+	 * Set ranking debe comprobar que el nÃºmero que se introduzca sea mayor que -1 y menor a 11 y se guarde
 	 */
 	@Test
 	void testSetRankingMayorQue0() {
@@ -324,7 +324,7 @@ class EquipoTest {
 
 
 	/**
-	 * Set ranking debe comprobar que el n�mero que se introduzca sea menor que 0 y no se guarde
+	 * Set ranking debe comprobar que el nÃºmero que se introduzca sea menor que 0 y no se guarde
 	 */
 	@Test
 	void testSetRankingMenorQue0() {
@@ -335,7 +335,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Set ranking debe comprobar que el n�mero que se introduzca sea igual que 0 y se guarde
+	 * Set ranking debe comprobar que el nÃºmero que se introduzca sea igual que 0 y se guarde
 	 */
 	@Test
 	void testSetRankingIgualQue0() {
@@ -346,7 +346,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Set ranking debe comprobar que el n�mero que se introduzca sea igual que 10 y se guarde
+	 * Set ranking debe comprobar que el nÃºmero que se introduzca sea igual que 10 y se guarde
 	 */
 	@Test
 	void testSetRankingIgualQue10() {
@@ -357,7 +357,7 @@ class EquipoTest {
 	}
 
 	/**
-	 * Set ranking debe comprobar que el n�mero que se introduzca sea mayor que 10 y no se guarde
+	 * Set ranking debe comprobar que el nÃºmero que se introduzca sea mayor que 10 y no se guarde
 	 */
 	@Test
 	void testSetRankingMayorQue10() {
