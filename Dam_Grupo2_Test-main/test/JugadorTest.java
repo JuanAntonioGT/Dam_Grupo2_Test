@@ -61,7 +61,7 @@ class JugadorTest {
         assertEquals(null,jugador.getNombreJugador());
     }
 
-    // Test para que tenga menos del mÃ­nimo de 4 caracteres
+    // Test para que tenga menos del mínimo de 4 caracteres
 
     @Test
     void setTestNombreJugadorCaracterMenorACuatro() {
@@ -113,7 +113,7 @@ class JugadorTest {
     @Test
     void setTestNombreJugadorMasDelMaximo() {
         Jugador jugador = new Jugador();
-        String nombre = "qwertyuiopasdfghjklÃ±r"; // La prueba
+        String nombre = "qwertyuiopasdfghjklñr"; // La prueba
         jugador.setNombreJugador(nombre);
 
         assertNull(jugador.getNombreJugador());
@@ -141,7 +141,7 @@ class JugadorTest {
         assertThrows(NumberFormatException.class, () -> {
             int edad = Integer.parseInt("Hola");
             jugador.setEdad(edad);
-        },"Solo puedes guardar nÃºmeros");
+        },"Solo puedes guardar números");
 
     }
 
@@ -268,7 +268,7 @@ class JugadorTest {
     void testTipoJugadorNull() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 17;
 
         jugador.setNombreJugador(nombreJugador);
@@ -284,7 +284,7 @@ class JugadorTest {
     void testTipoJugadorMenorRangoJunior() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 18;
 
         jugador.setNombreJugador(nombreJugador);
@@ -301,7 +301,7 @@ class JugadorTest {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
         int edad = 25;
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
 
 
         jugador.setNombreJugador(nombreJugador);
@@ -318,7 +318,7 @@ class JugadorTest {
     void testTipoJugadorMenorRangoSenior() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 26;
 
         jugador.setNombreJugador(nombreJugador);
@@ -334,7 +334,7 @@ class JugadorTest {
     void testTipoJugadorMayorRangoSenior() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 35;
 
         jugador.setNombreJugador(nombreJugador);
@@ -350,7 +350,7 @@ class JugadorTest {
     void testTipoJugadorMenorRangoMaster() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 36;
 
         jugador.setNombreJugador(nombreJugador);
@@ -366,7 +366,7 @@ class JugadorTest {
     void testTipoJugadorRangoMayoDeMaster() {
         Jugador jugador = new Jugador();
         String nombreJugador = "Antonio";
-        String idioma = "EspaÃ±ol";
+        String idioma = "Español";
         int edad = 50;
 
         jugador.setNombreJugador(nombreJugador);
