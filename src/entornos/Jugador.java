@@ -1,11 +1,29 @@
 package entornos;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Jugador.
+ * @author Artsiom Krautsou Kharlap
+ * @version 14/02/2022
+ */
+
 public class Jugador {
+	
+	/** El nombre. */
 	private String nombre;
+	
+	/** La edad. */
 	private int edad;
+	
+	/** El idioma. */
 	private String idioma;
 
+	/**
+	 * Sets de nombre jugador.
+	 *
+	 * @param nombre de new nombre jugador
+	 */
 	/*NOMBRE*/
 	public void setNombreJugador(String nombre) {
 		if (isValidated(nombre)){
@@ -24,10 +42,20 @@ public class Jugador {
 		}
 	}
 
+	/**
+	 * Gets de nombre jugador.
+	 *
+	 * @return El nombre jugador
+	 */
 	public String getNombreJugador() {
 		return nombre;
 	}
 
+	/**
+	 * Sets de edad.
+	 *
+	 * @param edad de new edad
+	 */
 	/*EDAD*/
 	public void setEdad(int edad) {
 
@@ -38,10 +66,20 @@ public class Jugador {
 
 	}
 
+	/**
+	 * Gets de edad.
+	 *
+	 * @return La edad
+	 */
 	public int getEdad() {
 		return edad;
 	}
 
+	/**
+	 * Sets de idioma.
+	 *
+	 * @param idioma de new idioma
+	 */
 	/*IDIOMA*/
 	public void setIdioma(String idioma) {
 		// A IDIOMA NO PUEDE LLEGAR MAS DE 1 IDIOMA
@@ -58,12 +96,22 @@ public class Jugador {
 		}
 	}
 
+	/**
+	 * Gets de idioma.
+	 *
+	 * @return El idioma
+	 */
 	public String getIdioma() {
 		return idioma;
 	}
 
 
 	//Story 5
+	/**
+	 * Gets de tipo jugador.
+	 *
+	 * @return El tipo jugador
+	 */
 	/*TIPO*/
 	public String getTipoJugador() {
 		//String para los rangos de clases
@@ -99,6 +147,12 @@ public class Jugador {
 
 	}
 
+	/**
+	 * Checks if is validated.
+	 *
+	 * @param comprobar el comprobar
+	 * @return the boolean
+	 */
 	//Nos devuelve un true si es distinto a nulo.
 	private Boolean isValidated(String comprobar) {
 		boolean isTrue=true;
@@ -111,6 +165,12 @@ public class Jugador {
 		return isTrue;
 	}
 
+	/**
+	 * Checks if is in range.
+	 *
+	 * @param comprobar the comprobar
+	 * @return true, if is in range
+	 */
 	//Nos devuelve un true si está en rango la longitud de la palabra
 	private boolean isInRange(String comprobar){
 		int largoMin = 4;
@@ -125,6 +185,12 @@ public class Jugador {
 		return isLongitud;
 	}
 
+	/**
+	 * Checks if is word.
+	 *
+	 * @param comprobar the comprobar
+	 * @return true, if is word
+	 */
 	//Nos devuelve un true si una letra del abecedario español
 	private boolean isWord(String comprobar){
 		char a = 65;
@@ -143,6 +209,12 @@ public class Jugador {
 		return isEsLetra;
 	}
 
+	/**
+	 * Checks if is in year.
+	 *
+	 * @param comprobarEdad the comprobar edad
+	 * @return true, if is in year
+	 */
 	//Nos devuelve true si está en el rango de edad
 	private boolean isInYear(int comprobarEdad){
 		int edadCero = 0;
@@ -162,6 +234,12 @@ public class Jugador {
 		return isRangoEdad;
 	}
 
+	/**
+	 * Checks if is in language.
+	 *
+	 * @param idioma the idioma
+	 * @return true, if is in language
+	 */
 	//Nos devuelve true si el idioma es válido
 	private boolean isInLanguage(String idioma){
 		String[] listaDeIdiomas =  {"aleman", "ingles", "espanol", "frances"};
