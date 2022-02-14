@@ -1,4 +1,4 @@
-package entornos;
+package entornoss;
 public class Equipo {
 
 	private String nombreEquipo;
@@ -9,7 +9,7 @@ public class Equipo {
 		if (isValidated(nombreEquipo)){
 			//Comprobamos el Rango
 			if (isInRange(nombreEquipo)) {
-				//Comprobamos que sea del abecedario espaÒol
+				//Comprobamos que sea del abecedario espa√±ol
 				if (isWord(nombreEquipo)){
 					String nombreEquipoMayus = nombreEquipo.toUpperCase();
 					this.nombreEquipo = nombreEquipoMayus;
@@ -80,7 +80,7 @@ public class Equipo {
 		} return isValidated;
 	}
 
-	//Nos devuelve true si est· en rango la longitud de la palabra
+	//Nos devuelve true si est√° en rango la longitud de la palabra
 	private boolean isInRange(String nombreEquipo) {
 		int nombreMinimo = 4;
 		int nombreMaximo = 20;
@@ -95,7 +95,7 @@ public class Equipo {
 		return isInRage;
 	}
 
-	//Nos devuelve true si una letra del abecedario espaÒol
+	//Nos devuelve true si una letra del abecedario espa√±ol
 	private boolean isWord(String comprobar){
 		char a = 65;
 		char z = 90;
@@ -135,7 +135,7 @@ public class Equipo {
 		return isEntire;
 	}
 
-	//Nos devuelve true si est· en el rango de ranking
+	//Nos devuelve true si est√° en el rango de ranking
 	private boolean isRankingInRange(int ranking) {
 		int rankingMinimo = 1; //ranking minimo para poder esta en el ranking
 		int rankingMaximo = 10; //ranking maximo para poder esta en el ranking
