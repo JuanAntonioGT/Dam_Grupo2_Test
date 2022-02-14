@@ -1,4 +1,4 @@
-package entornoss;
+package entornos;
 public class Equipo {
 
 	private String nombreEquipo;
