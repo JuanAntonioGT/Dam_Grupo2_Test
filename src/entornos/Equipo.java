@@ -25,7 +25,7 @@ public class Equipo {
 		if (isValidated(nombreEquipo)){
 			//Comprobamos el Rango
 			if (isInRange(nombreEquipo)) {
-				//Comprobamos que sea del abecedario español
+				//Comprobamos que sea del abecedario espaÃ±ol
 				if (isWord(nombreEquipo)){
 					String nombreEquipoMayus = nombreEquipo.toUpperCase();
 					this.nombreEquipo = nombreEquipoMayus;
@@ -100,7 +100,7 @@ public class Equipo {
 
 		if (isValidated(nombreEquipo)){
 
-			if(this.ranking>=minimoTerceraCategoria && this.ranking<maximoTerceraCategoria){
+			if(this.ranking>=minimoTerceraCategoria && this.ranking<=maximoTerceraCategoria){
 				retorno =  tercera;
 			}else if(this.ranking>=minimoSegundaCategoria && this.ranking <=maximoSegundaCategoria){
 				retorno = segunda;
@@ -133,7 +133,7 @@ public class Equipo {
 	 * @param nombreEquipo the nombre equipo
 	 * @return true, if is in range
 	 */
-	//Nos devuelve true si está en rango la longitud de la palabra
+	//Nos devuelve true si estÃ¡ en rango la longitud de la palabra
 	private boolean isInRange(String nombreEquipo) {
 		int nombreMinimo = 4;
 		int nombreMaximo = 20;
@@ -154,7 +154,7 @@ public class Equipo {
 	 * @param comprobar the comprobar
 	 * @return true, if is word
 	 */
-	//Nos devuelve true si una letra del abecedario español
+	//Nos devuelve true si una letra del abecedario espaÃ±ol
 	private boolean isWord(String comprobar){
 		char a = 65;
 		char z = 90;
@@ -206,7 +206,7 @@ public class Equipo {
 	 * @param ranking the ranking
 	 * @return true, if is ranking in range
 	 */
-	//Nos devuelve true si está en el rango de ranking
+	//Nos devuelve true si estÃ¡ en el rango de ranking
 	private boolean isRankingInRange(int ranking) {
 		int rankingMinimo = 1; //ranking minimo para poder esta en el ranking
 		int rankingMaximo = 10; //ranking maximo para poder esta en el ranking
